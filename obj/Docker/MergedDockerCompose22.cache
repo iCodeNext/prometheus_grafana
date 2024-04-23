@@ -1,0 +1,84 @@
+name: dockercompose6807489962023125618
+services:
+  api:
+    build:
+      context: D:\iCodeNext\GithubRepo\prometheus_grafana
+      dockerfile: API/Dockerfile
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_HTTP_PORTS: "8080"
+      ASPNETCORE_HTTPS_PORTS: "8081"
+      ASPNETCORE_URLS: https://+:443;http://+:80
+    image: api
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 80
+        published: "8082"
+        protocol: tcp
+      - mode: ingress
+        target: 443
+        published: "8084"
+        protocol: tcp
+      - mode: ingress
+        target: 8080
+        protocol: tcp
+      - mode: ingress
+        target: 8081
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: C:\Users\Mohammad\AppData\Roaming/Microsoft/UserSecrets
+        target: /home/app/.microsoft/usersecrets
+        read_only: true
+        bind:
+          create_host_path: true
+      - type: bind
+        source: C:\Users\Mohammad\AppData\Roaming/ASP.NET/Https
+        target: /home/app/.aspnet/https
+        read_only: true
+        bind:
+          create_host_path: true
+  grafana:
+    container_name: grafana_grafprom
+    image: grafana/grafana:master
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 3000
+        published: "3000"
+        protocol: tcp
+    volumes:
+      - type: bind
+        source: D:\iCodeNext\GithubRepo\prometheus_grafana\grafana\provisioning\dashboards
+        target: /etc/grafana/provisioning/dashboards
+        bind:
+          create_host_path: true
+      - type: bind
+        source: D:\iCodeNext\GithubRepo\prometheus_grafana\grafana\provisioning\datsources
+        target: /etc/grafana/provisioning/datsources
+        bind:
+          create_host_path: true
+  prometheus:
+    container_name: prometheus_grafprom
+    image: prom/prometheus
+    networks:
+      default: null
+    ports:
+      - mode: ingress
+        target: 9090
+        published: "9090"
+        protocol: tcp
+    restart: always
+    volumes:
+      - type: bind
+        source: D:\iCodeNext\GithubRepo\prometheus_grafana\prometheus\prometheus.yml
+        target: /etc/prometheus/prometheus.yml
+        read_only: true
+        bind:
+          create_host_path: true
+networks:
+  default:
+    name: dockercompose6807489962023125618_default

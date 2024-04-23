@@ -1,0 +1,12 @@
+D:\iCodeNext\GithubRepo\prometheus_grafana\bin\Debug\API.deps.json
+D:\iCodeNext\GithubRepo\prometheus_grafana\bin\Debug\API.runtimeconfig.json
+D:\iCodeNext\GithubRepo\prometheus_grafana\bin\Debug\appsettings.Development.json
+D:\iCodeNext\GithubRepo\prometheus_grafana\bin\Debug\appsettings.json
+D:\iCodeNext\GithubRepo\prometheus_grafana\bin\Debug\API.exe
+D:\iCodeNext\GithubRepo\prometheus_grafana\bin\Debug\API.dll
+D:\iCodeNext\GithubRepo\prometheus_grafana\bin\Debug\Prometheus.AspNetCore.dll
+D:\iCodeNext\GithubRepo\prometheus_grafana\bin\Debug\Prometheus.NetStandard.dll
+D:\iCodeNext\GithubRepo\prometheus_grafana\bin\Debug\API.pdb
+D:\iCodeNext\GithubRepo\prometheus_grafana\obj\Debug\docker-compose.dcproj.AssemblyReference.cache
+D:\iCodeNext\GithubRepo\prometheus_grafana\obj\Debug\docker-compose.dcproj.CoreCompileInputs.cache
+D:\iCodeNext\GithubRepo\prometheus_grafana\obj\Debug\docker-compose.dcproj.CopyComplete

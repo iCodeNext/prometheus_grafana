@@ -1,0 +1,6 @@
+datasources:
+- name: Prometheus
+  type: prometheus
+  url: http://prometheus_grafprom:9090
+  isDefault: true
+  access: proxy
