@@ -1,5 +1,6 @@
 global:
   scrape_interval:     3s 
+
 scrape_configs:
   - job_name: 'api-read-prometheus'
     scheme: http
@@ -7,4 +8,11 @@ scrape_configs:
     static_configs:
     - targets:
         - host.docker.internal:8082
- 
+
+rule_files:
+     - /etc/prometheus/alert.rules.yml
+
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets: ['alertmanager:9093']
