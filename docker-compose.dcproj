@@ -10,6 +10,7 @@
     <DockerServiceName>api</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="AlertManager\alertmanager.yml" />
     <None Include="docker-compose.override.yml">
       <DependentUpon>docker-compose.yml</DependentUpon>
     </None>
@@ -19,6 +20,7 @@
       <DependentUpon>datasources.yml</DependentUpon>
     </None>
     <None Include="grafana\provisioning\datasources\datasources.yml" />
+    <None Include="Prometheus\alert.rules.yml" />
     <None Include="Prometheus\prometheus.override.yml">
       <DependentUpon>prometheus.yml</DependentUpon>
     </None>
