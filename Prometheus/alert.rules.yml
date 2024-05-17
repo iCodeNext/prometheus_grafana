@@ -1,0 +1,11 @@
+groups:
+  - name: '500_exceptions'
+    rules:
+      - alert: 'HTTP500ErrorThreshold'
+        expr: http_requests_received_total > 5
+       # for: 1m
+        labels:
+          severity: 'critical'
+        annotations:
+            summary: 'High 5xx rate for {{ $labels.method }} on {{ $labels.path }}'
+            description: 'The 5xx error rate for path {{$labels.path}} with method {{ $labels.method }} in {{ $labels.job }} is {{ printf "%.2f" $value }}%.'
