@@ -19,7 +19,6 @@ services:
         - "3000:3000"
     volumes:
         - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
-
   prometheus:
     image: prom/prometheus
     container_name: prometheus_grafprom
@@ -28,5 +27,14 @@ services:
       - 9090:9090
     volumes:
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml:ro
-
-
+      - ./prometheus/alert.rules.yml:/etc/prometheus/alert.rules.yml:ro
+  alertmanager:
+    image: prom/alertmanager:latest
+    container_name: alertmanager
+    volumes:
+      - ./alertmanager:/etc/alertmanager
+    command:
+      - '--config.file=/etc/alertmanager/alertmanager.yml'
+      - '--storage.path=/alertmanager'
+    ports:
+      - '9093:9093'

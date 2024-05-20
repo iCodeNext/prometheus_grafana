@@ -19,9 +19,13 @@
       <DependentUpon>datasources.yml</DependentUpon>
     </None>
     <None Include="grafana\provisioning\datasources\datasources.yml" />
+    <None Include="prometheus\alert.rules.yml" />
     <None Include="Prometheus\prometheus.override.yml">
       <DependentUpon>prometheus.yml</DependentUpon>
     </None>
     <None Include="Prometheus\prometheus.yml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NewFolder\" />
   </ItemGroup>
 </Project>
