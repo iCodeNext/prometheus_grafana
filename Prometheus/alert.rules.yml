@@ -9,3 +9,4 @@ groups:
         annotations:
             summary: 'High request rate for {{ $labels.method }} on {{ $labels.path }}'
             description: 'The request rate for path {{$labels.path}} with method {{ $labels.method }} in {{ $labels.job }} is {{ printf "%.2f" $value }}%.'
+
