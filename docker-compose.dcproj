@@ -10,6 +10,7 @@
     <DockerServiceName>api</DockerServiceName>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="alertmanager\alertmanager.yml" />
     <None Include="docker-compose.override.yml">
       <DependentUpon>docker-compose.yml</DependentUpon>
     </None>
@@ -24,8 +25,5 @@
       <DependentUpon>prometheus.yml</DependentUpon>
     </None>
     <None Include="Prometheus\prometheus.yml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewFolder\" />
   </ItemGroup>
 </Project>

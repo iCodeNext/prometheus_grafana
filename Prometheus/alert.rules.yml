@@ -2,8 +2,8 @@ groups:
   - name: 'ManyRequestsThreshold'
     rules:
       - alert: 'ManyRequestsThreshold'
-        expr: http_requests_received_total > 5
-       # for: 1m
+        expr: rate(http_requests_received_total[1m]) > 5
+       # for: 1m 
         labels:
           severity: 'critical'
         annotations:
