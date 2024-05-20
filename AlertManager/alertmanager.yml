@@ -1,7 +1,0 @@
-route:
-  receiver: 'discord-webhook'
-receivers:
-  - name: 'discord-webhook'
-    discord_configs:
-        - webhook_url: 'https://discord.com/api/webhooks/1133154099345510551/51vLLa0yBojAU4A6bzSwaqTg-SrZ-_y1K1AVZz084a_QUGQv6x6TxYVrUdr12W7NH4sJ'
-          send_resolved: true
